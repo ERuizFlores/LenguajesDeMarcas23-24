@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<receta>
+  <nombre>Ensalada de brócoli con pasas</nombre>
+  <informacionGeneral>
+    <dificultad>Fácil</dificultad>
+    <tiempo>15 minutos de preparación y 15 minutos de cocinado</tiempo>
+    <herramientas>
+      <herramienta>vaporera</herramienta>
+      <herramienta>tabla de cortar</herramienta>
+      <herramienta estado="afilado">cuchillo</herramienta>
+      <herramienta tamano="grande">sartén</herramienta>
+   </herramientas>
+  </informacionGeneral>
+  <ingredientes>
+    <ingrediente cantidad="1" unidad="cabeza">brócoli</ingrediente>
+    <ingrediente cantidad="100" unidad="g">bacon en taquiitos</ingrediente>
+    <ingrediente cantidad="media" unidad="cabeza">cebolla tierna</ingrediente>
+    <ingrediente cantidad="1" unidad="puñado">pasas</ingrediente>
+    <ingrediente cantidad="1" unidad="pizca">sal</ingrediente>
+    <ingrediente cantidad="1" unidad="pizca">pimienta</ingrediente>
+    <ingrediente cantidad="1" unidad="chorro" calidad="virgen extra">aceite de oliva</ingrediente>
+  </ingredientes>
+  <preparacion>
+    <paso orden="1">Lavamos el brócoli, lo troceamos en arbolitos y lo hacemos al vapor en una vaporera. Hay que dejarlo al dente.</paso>
+    <paso orden="2">Picamos la cebolla con la tabla de cortar y el cuchillo.</paso>
+    <paso orden="3">En una sartén al fuego salteamos en aceite de oliva la cebolla picada junto con los taquitos de bacón (todo a la vez).</paso>
+    <paso orden="4">Cuando empiece a tomar color y los taquitos estén crujientes ponemos la pasas, salpimentamos y salteamos un par de minutos todo junto.</paso>
+    <paso orden="5">Servimos el brócoli templado y rociado con la salsa de bacon y pasas. Hay que aprovechar toda la salsa, el aceite y todos los jugos del salteado.</paso>
+  </preparacion>
+</receta>
