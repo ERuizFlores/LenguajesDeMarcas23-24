@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="shortcut icon" href="https://vanacco.com/wp-content/uploads/2020/06/Form-1-300x300.jpg">
+</head>
+<body>
+    <h1>FORMULARIO</h1>
+    <form action="https://httpbin.org.get" method="GET">
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" name="email" id="email" autofocus required> <br> <br>
+
+        <label for="nombre">Nombre y apellidos</label>
+        <input type="nombre" name="nombre" id="nombre" required> <br> <br>
+
+        <label for="url">URL</label>
+        <input type="url" name="url" id="url" size="40" placeholder="Escribe la URL de tu repositorio" > <br> <br>
+
+        <fieldset>
+            <legend>Campos de fechas y horas</legend>
+
+            <label for="fecha">Fecha</label>
+            <input type="date" name="date" id="date"> <br> <br>
+            
+            <label for="tiempo">Tiempo</label>
+            <input type="time" name="tiempo" id="tiempo"> <br> <br>
+
+            <label for="fechahora">Fecha y hora</label>
+            <input type="datetime-local" name="fechahora" id="fechahora"> <br> <br>
+
+            <label for="mes">Mes</label>
+            <input type="month" name="mes" id="mes"> <br> <br> <!--not supported in mozilla and safari-->
+
+            <label for="semana">Semana</label>
+            <input type="week" name="semana" id="semana"> <br> <br> <!--not supported in mozilla and safari-->
+        </fieldset>
+
+        <label for="num">Número entre el -10 y 10</label>
+        <input type="number" name="numero" id="num" min="-10" max="10"> <br> <br>
+
+        <label for="tfno">Teléfono</label>
+        <input type="tel" name="tfno" id="tfno"> <br> <br>
+
+        <label for="busqueda">Término de búsqueda</label>
+        <input type="search" name="busqueda" id="busqueda"> <br> <br>
+
+        <label for="colorFav">Color favorito</label>
+        <input type="color" name="colorFav" id="colorFav"> <br> <br>
+
+        <input type="submit" value="Enviar formulario">
+    </form>
+</body>
+</html>

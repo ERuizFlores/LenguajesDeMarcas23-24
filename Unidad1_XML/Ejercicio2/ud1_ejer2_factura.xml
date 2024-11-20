@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura>
+    <datosCliente>
+        <nombre>Biblioteca Pérez</nombre>
+        <CIF>333111555A</CIF>
+    </datosCliente>
+    <infoFactura>
+        <numero>27</numero>
+        <fecha>
+            <dia>18</dia>
+            <mes>12</mes>
+            <year>2017</year>
+        </fecha>
+    </infoFactura>
+    <contenido>
+        <articulo>
+            <descripcion>Libro analítica Web</descripcion>
+            <cantidad>1</cantidad>
+            <codigo>AW7</codigo>
+            <precioUnidad moneda="EUR">25,12</precioUnidad>
+            <precioTotal moneda="EUR">25,12</precioTotal>
+        </articulo>
+        <articulo>
+            <descripcion>Curso de HTML</descripcion>
+            <cantidad>2</cantidad>
+            <codigo>CPS</codigo>
+            <precioUnidad moneda="EUR">30,50</precioUnidad>
+            <precioTotal moneda="EUR">61,00</precioTotal>
+        </articulo>
+        <sumaTotal>
+            <importe articulo="AW7" cantidad="1" moneda="EUR">25,12</importe>
+            <importe articulo="CPS" cantidad="2" moneda="EUR">61,00</importe>
+            <subtotal moneda="EUR">86,12</subtotal>
+            <iva porcentaje="21" moneda="EUR">18,09</iva>
+            <total moneda="EUR">104,21</total>
+        </sumaTotal>
+    </contenido>
+</factura>

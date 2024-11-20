@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taller>
+    <reparacionTipo tipo="1">coche</reparacionTipo>
+    <reparacionTipo tipo="2">moto</reparacionTipo>
+    <pagoTipo>al contado</pagoTipo>
+    <pagoTipo>transferencia</pagoTipo>
+    <pagoTipo>tarjeta</pagoTipo>
+    <coche>
+        <matricula>
+            <numero>5678</numero>
+            <letra>CRR</letra>
+        </matricula>
+        <marca>Peugeot</marca>
+        <reparacion>
+            <cambio>aceite</cambio>
+            <cambio>filtros</cambio>
+            <duracion unidad="minutos">40</duracion>
+        </reparacion>
+        <factura>
+            <facNumero>A-1234</facNumero>
+            <coste moneda="€">110</coste>
+            <pago>al contado</pago>
+        </factura>
+    </coche>
+    <moto>
+        <matricula>
+            <numero>9712</numero>
+            <letra>AMZ</letra>
+        </matricula>
+        <marca>Honda</marca>
+        <modelo>CB</modelo>
+        <reparacion>
+            <reconstruccion>chasis</reconstruccion>
+            <duracion unidad="dia">3</duracion>
+        </reparacion>
+        <factura>
+            <facNumero>M-345</facNumero>
+            <coste moneda="€">1200</coste>
+            <pago>transferencia</pago>
+        </factura>
+    </moto>
+</taller>

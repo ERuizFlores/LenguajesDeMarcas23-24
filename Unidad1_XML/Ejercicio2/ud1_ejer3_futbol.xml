@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<futbol>
+    <equipo>
+        <nombre>Real Zaragoza</nombre>
+        <ciudad>Zaragoza</ciudad>
+        <entrenador>Fran Escribá</entrenador>
+        <jugador numero="13">
+            <nombre>Gaëtan Poussin</nombre>
+            <posicion>Portero</posicion>
+            <nacionalidad>Francia</nacionalidad>
+        </jugador>
+        <jugador numero="15">
+            <nombre>Santiago Mouriño</nombre>
+            <posicion>Defensa</posicion>
+            <nacionalidad>Uruguay</nacionalidad>
+        </jugador>
+        <jugador numero="12">
+            <nombre>Sinan Bakis</nombre>
+            <posicion>Delantero</posicion>
+            <nacionalidad>Turquía</nacionalidad>
+        </jugador>
+    </equipo>
+    <equipo>
+        <nombre>Sociedad Deportiva Huesca</nombre>
+        <ciudad>Huesca</ciudad>
+        <entrenador>José Ángel Ziganda</entrenador>
+        <jugador numero="10">
+            <nombre>Kento Hashimoto</nombre>
+            <posicion>Centrocampista</posicion>
+            <nacionalidad>Japón</nacionalidad>
+        </jugador>
+        <jugador numero="24">
+            <nombre>Samuel Obeng</nombre>
+            <posicion>Delantero</posicion>
+            <nacionalidad>Ghana</nacionalidad>
+        </jugador>
+        <jugador numero="31">
+            <nombre>Fadia Fofana</nombre>
+            <posicion>Defensa</posicion>
+            <nacionalidad>España</nacionalidad>
+        </jugador>
+    </equipo>
+</futbol>
