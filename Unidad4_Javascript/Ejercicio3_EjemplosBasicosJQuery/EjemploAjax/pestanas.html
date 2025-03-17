@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Página con Pestañas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      background-color: #555;
+      cursor: pointer;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="pestanas.js"> </script>
+</head>
+<body>
+
+  <header>
+    <h1>Página con Pestañas</h1>
+  </header>
+
+  <nav>
+    <a href="#" class="tab" data-tab="tab1">Pestaña 1</a>
+    <a href="#" class="tab" data-tab="tab2">Pestaña 2</a>
+    <a href="#" class="tab" data-tab="tab3">Pestaña 3</a>
+  </nav>
+
+  <section id="tab1" class="tab-content">
+    <h2>Pestaña 1</h2>
+    <p>Contenido de la Pestaña 1.</p>
+  </section>
+
+  <section id="tab2" class="tab-content">
+    <h2>Pestaña 2</h2>
+    <p>Contenido de la Pestaña 2.</p>
+  </section>
+
+  <section id="tab3" class="tab-content">
+    <h2>Pestaña 3</h2>
+    <p>Contenido de la Pestaña 3.</p>
+  </section>
+
+</body>
+</html>

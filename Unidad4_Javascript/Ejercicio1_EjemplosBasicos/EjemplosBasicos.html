@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        #miDiv {
+          width: 200px;
+          height: 100px;
+          background-color: darkblue;
+          color: white;
+        }
+      </style>
+</head>
+<body>
+
+    <div id="miDiv">
+        Contenido Original
+    </div>
+
+  <p onmouseover="cambiarTexto()" id="cambiatexto">Cambiar el texto</p>
+
+  <script>
+    //window.alert("Hola desde el objeto window");
+    function cambiarTexto(){
+        document.getElementById("miDiv").innerHTML = "<h1>Hemos cambiado el texto</h1>";
+    }
+
+    function esBisiesto(year){
+        console.log(year);
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)){
+          return true;
+        }
+        return false;
+    }
+
+    function checkBisiesto(){
+      let year = document.getElementById("text_year").value;
+      let capa = document.getElementById("miDiv");
+      
+      if(esBisiesto(year)){
+        //Fondo VERDE
+
+        capa.style.backgroundColor = 'lightgreen';
+        capa.innerText = 'Es bisiesto';
+      } else {
+        //Fondo ROJO
+        capa.style.backgroundColor = 'red';
+        capa.innerText='No es bisiesto';
+      }
+    }
+  </script>
+
+  <p>...Después del script.</p>
+  <input type="text" id="text_year">
+  <button onclick="checkBisiesto()">comprobar</button>
+</body>
+
+</html>

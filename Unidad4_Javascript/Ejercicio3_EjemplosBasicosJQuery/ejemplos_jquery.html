@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo jQuery: Modificar Texto</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      setTimeout(function(){
+        $("#miParrafo").text("Hemos cambiado este texto con jQuery");
+        $("#miParrafo").css({
+          "color": "blueviolet",
+          "font-size": "2em",
+          "transition": "color 3s, font-size 3s"
+        });
+      }, 2000);
+
+      $("#toggleButton").click(function(){
+          $("#miParrafo").toggle();
+      });  
+
+
+      $("#miCuadro").click(function(){
+
+          $(this).animate({
+            "width": "200px",
+            "height": "200px"
+          }, 1500);
+
+          $(this).css({"background":"linear-gradient(45deg, blue, red)"});
+      });
+        
+    });
+  </script>
+</head>
+<body>
+
+  <p id="miParrafo">Este es un párrafo.</p>
+
+  <button id="toggleButton">Mostrar/Ocultar</button>
+
+  <div id="miCuadro" style="width: 100px; height: 100px; background-color: red; margin: 0 auto;"></div>
+
+  
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        #miDiv {
+          width: 200px;
+          height: 100px;
+          background-color: darkblue;
+          color: white;
+        }
+
+
+        .contenedor{
+          width: 300px;
+          height: 300px;
+          background-color: #ccc;
+          color: #333;
+          margin: 0 auto;
+          font-size: 1.5em;
+        }
+      </style>
+</head>
+<body>
+
+    <div id="miDiv">
+        Contenido Original
+    </div>
+
+  <p onmouseover="cambiarTexto()" id="cambiatexto">Cambiar el texto</p>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    //window.alert("Hola desde el objeto window");
+    function cambiarTexto(){
+        document.getElementById("miDiv").innerHTML = "<h1>Hemos cambiado el texto</h1>";
+    }
+
+    function esBisiesto(year){
+        console.log(year);
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)){
+          return true;
+        }
+        return false;
+    }
+
+
+    $(document).ready(function(){
+      
+      $("#parrafo").text = "Hoy es miércoles 17 de enero y tenemos jQuery";
+      
+      $("#text_year").val("1992");
+    });
+
+    function checkBisiesto(){
+      let year = document.getElementById("text_year").value;
+      let capa = document.getElementById("miDiv");
+      
+      if(esBisiesto(year)){
+        //Fondo VERDE
+
+        capa.style.backgroundColor = 'lightgreen';
+        capa.innerText = 'Es bisiesto';
+      } else {
+        //Fondo ROJO
+        capa.style.backgroundColor = 'red';
+        capa.innerText='No es bisiesto';
+      }
+    }
+
+    let dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábodo", "Domingo"];
+    console.log(dias.length);
+    console.log(dias[0]);
+
+    let semana = dias;
+
+    semana.forEach(function(dia){ 
+      console.log(dia);
+    });
+
+    let diasConA = semana.filter((dia)=>{return dia.includes("a") || dia.includes("A")});
+    console.log(diasConA);
+
+    semana.forEach((dia) => { console.log(dia.length) } );
+
+    let numeros = [];
+    for(let i = 0; i<100; i++){
+      numeros.push(i);
+    }
+
+    
+    let triples = numeros.map((n)=> {return n*3});
+    console.log(numeros);
+    console.log(triples);
+
+    let pares = numeros.filter((n) => { return n%2 == 0});
+    console.log(pares);
+
+    let suma = numeros.reduce((suma, numero)=>{ return suma+numero}, 0);
+    console.log(suma);
+
+    function calculaLongitudArea(radio){
+      let longitud = radio*2*Math.PI;
+      let area = radio*radio*Math.PI;
+      console.log("longitud: "+longitud);
+      console.log("area: "+area);
+    }
+
+    let aleatorio = Math.trunc(Math.random()*100);
+    calculaLongitudArea(4);
+    let resultado = (aleatorio %2 == 0) ? "par" : "impar";
+    console.log(aleatorio+" es: "+resultado);
+
+    var dato = "Ronaldo "+5+5;
+    console.log(typeof(dato)+"-->"+dato);
+    var dato= 5 +5 + " Ronaldo ";
+    console.log(typeof(dato)+"-->"+dato);
+
+    function mouseout(){
+        let hoy = new Date();
+        var milista = ['enero', 456, [0, 1, 2]];
+
+        document.getElementById("cajafecha").innerText = hoy.getFullYear();
+        document.getElementById("cajafecha").innerHTML += "<p>mes:"+hoy.getMonth();+"</p>";
+        document.getElementById("cajafecha").innerHTML += "<p>"+milista[1][2]+"</p>";
+
+        
+
+    }
+
+    function cambiarfondo(){
+      document.getElementById("cajafecha").style.backgroundColor ="#33bb33";
+    }
+
+
+    console.log(Number("99"));
+    console.log(Number(true));
+    console.log(Number(false));
+
+  </script>
+
+  <div onmouseout="mouseout()"  id="cajafecha" class="contenedor">Hoy es Miércoles, 17 de enero de 2024</div>
+  <p id="parrafo">...Después del script.</p>
+  <input type="text" id="text_year" onblur="cambiarfondo()">
+  <button onclick="checkBisiesto()">comprobar</button>
+</body>
+
+</html>

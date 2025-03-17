@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Formulario</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            margin: 3em auto;
+            max-width: 40em;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #FF0000;
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            manejadorValidarFormulario();
+        });
+
+
+        /*
+        Esta función controla el evento de envío del formulario
+        */
+        function manejadorValidarFormulario(){
+
+            $('#btnEnviarFormulario').onClick(function(event){
+
+                // Esta línea impide que se envíe el formulario antes de comprobarlo
+                event.preventDefault(); 
+
+                let resultado = comprobarValidezCampos();
+
+            if(resultado == true){
+                // Si la validación ha ido bien, se envía el formulario
+                // con $('#myForm').submit(); se genera un bucle infinito, una forma de solucionarlo es sustituyendo el submit anterior por onClick
+                $('#myForm').submit();
+                window.alert('El formulario se ha enviado')
+               } else {
+                window.alert("Debes revisar el formulario");
+               }
+            });
+        }
+
+
+        function comprobarValidezCampos(){
+            
+            const numericField = $('#numericField').val();
+            const dateField = $('#dateField').val();
+            const emailField = $('#emailField').val();
+            const textField = $('#textField').val();
+            const passwordField = $('#passwordField').val();
+            // const selectField = $('#selectField').val();
+            // no hay select y falta código postal
+            const postalCodeField = $('#postalCode').val();
+
+            // Os pongo esta línea para que veáis que hemos capturado el valor.
+
+            console.log(numericField);
+            console.log(dateField);
+            console.log(emailField);
+            console.log(textField);
+            console.log(passwordField);
+            // console.log(selectField);
+            console.log(postalCodeField);
+
+            /*
+                EJERCICIO: Crear aquí las expresiones regulares adecuadas para comprobar que los valores
+                son adecuados. Si todos los campos son válidos, devolver true (y false en caso contrario).
+            */
+            let validacion = true;
+            let fechaActual = new Date();
+            let date = new Date (dateField);
+            console.log(date);
+            console.log(fechaActual);
+            let varNumericField = /^\d+$/;
+            let varDateField = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+            let varEmailField = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            let varTextField = /^[a-zA-Z0-9 ]+$/;
+            let varPasswordField = /^.{8,}$/;
+            let varPostalCodeField = /^50\d{3}$/;
+
+            if (varNumericField.test(numericField) == false){
+                validacion = false;
+                alert('numeric')
+            }
+
+            if (varDateField.test(dateField) == false ||  date <= fechaActual && validacion){
+                validacion = false;
+                alert('date') //alert
+            }
+
+            if (varEmailField.test(emailField) == false && validacion){
+                validacion = false;
+                alert('email')
+            }
+
+            if (varPostalCodeField.test(postalCodeField) == false &&validacion){
+                validacion = false;
+                alert('postal') 
+            }
+
+            if (varTextField.test(textField) == false && validacion){
+                validacion = false;
+                alert('text') 
+            }
+
+            if (varPasswordField.test(passwordField) == false && validacion){
+                validacion = false;
+                alert('password')
+            }
+
+            return validacion;
+
+        }
+    
+    
+    </script>
+</head>
+<body>
+
+    <form id="myForm" method="GET" action="https://httpbin.org/get">
+        <label for="numericField">Campo Numérico (validar que solo contenga números):</label>
+        <input type="number" id="numericField" name="numericField" required>
+
+        <label for="dateField">Campo de Fecha (validar que la fecha sea mayor que la actual):</label>
+        <input type="date" id="dateField" name="dateField" required>
+
+        <label for="emailField">Campo de Email (validar que sea un email válido):</label>
+        <input type="email" id="emailField" name="emailField" required>
+
+        <label for="postalCode">Campo para código postal (validar que sea un código postal que empiece por 50):
+        <input type="number" id="postalCode" name="postalCode" required>
+
+        <label for="textField">Campo de Texto (validar que solo hay letras, números o espacios):</label>
+        <input type="text" id="textField" name="textField" required>
+
+        <label for="passwordField">Campo de Contraseña (tamaño mínimo de 8 caracteres):</label>
+        <input type="password" id="passwordField" name="passwordField" required>
+
+        <input id="btnEnviarFormulario" type="submit" value="Enviar">
+    </form>
+
+
+</body>
+</html>
